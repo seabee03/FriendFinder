@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Friend Finder</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato|Open+Sans|Roboto&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+
+    <!-- Bootstrap CDN for js -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+    <div class="wrapper">
+        <div id="info" class="get-info">
+            <h4>We'd like to know a little about you for our files.</h4>
+            <h6>Name (Required)</h6>
+            <input type="text" id="name" class="form-control" placeholder="Mrs. Doubtfire" required>
+
+            <h6>Link to Photo Image (Required)</h6>
+            <input type="text" id="photo" class="form-control" placeholder="image.jpg" required>
+
+            <button class="continue">Continue</button>
+        </div>
+    </div>
+    
+    <div id="questionOne" class="question-block">
+        <div class="question-body">
+            <span class="question-number">#1</span>
+            <h5>You spend your leisure time actively socializing with a group of people, attending parties, shopping, and more.</h5>
+            <div id="question-1" class="inputs" role="group" aria-label="Question 1">
+                <input type="radio" name="question-1" id="question-1a" class="radio" value="1"><label class="label" for="question-1a"><i class="fas fa-angry"></i></label>
+                <input type="radio" name="question-1" id="question-1b" class="radio" value="2"><label class="label" for="question-1b"><i class="fas fa-frown"></i></label>
+                <input type="radio" name="question-1" id="question-1c" class="radio" value="3"><label class="label" for="question-1c"><i class="fas fa-meh"></i></label>
+                <input type="radio" name="question-1" id="question-1d" class="radio" value="4"><label class="label" for="question-1d"><i class="fas fa-smile"></i></label>
+                <input type="radio" name="question-1" id="question-1e" class="radio" value="5"><label class="label" for="question-1e"><i class="fas fa-smile-beam"></i></label>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
