@@ -189,5 +189,114 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript">
+        $(".continue").click(function() {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#questionOne").offset().top
+            }, 500);
+        });
+
+        $("#question-1 > .label").click(function() {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#questionTwo").offset().top
+            }, 500);
+        });
+
+        $("#question-2 > .label").click(function() {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#questionThree").offset().top
+            }, 500);
+        });
+
+        $("#question-3 > .label").click(function() {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#questionFour").offset().top
+            }, 500);
+        });
+
+        $("#question-4 > .label").click(function() {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#questionFive").offset().top
+            }, 500);
+        });
+
+        $("#question-5 > .label").click(function() {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#questionSix").offset().top
+            }, 500);
+        });
+
+        $("#question-6 > .label").click(function() {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#questionSeven").offset().top
+            }, 500);
+        });
+
+        $("#question-7 > .label").click(function() {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#questionEight").offset().top
+            }, 500);
+        });
+
+        $("#question-8 > .label").click(function() {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#questionNine").offset().top
+            }, 500);
+        });
+
+        $("#question-9 > .label").click(function() {
+            $([document.documentElement, document.body]).animate({
+                scrollTop: $("#questionTen").offset().top
+            }, 500);
+        });
+
+
+
+        $("#submit").on("click", function(event) {
+            event.preventDefault();
+
+            function validateForm() {
+                var isValid = true;
+                var completeForms = $(".inputs > input:checked").length;
+                if (completeForms < 10) {
+                    isValid = false;
+                } else {
+                    isValid = true;
+                }
+                return isValid;
+            }
+
+            if (validateForm()) {
+                var newFriend = {
+                    name: $("#name").val().trim(),
+                    photo: $("#photo").val().trim(),
+                    scores: [$("input[name='question-1']:checked").val(),
+                            $("input[name='question-2']:checked").val(),
+                            $("input[name='question-3']:checked").val(),
+                            $("input[name='question-4']:checked").val(),
+                            $("input[name='question-5']:checked").val(),
+                            $("input[name='question-6']:checked").val(),
+                            $("input[name='question-7']:checked").val(),
+                            $("input[name='question-8']:checked").val(),
+                            $("input[name='question-9']:checked").val(),
+                            $("input[name='question-10']:checked").val()
+                    ]
+                };
+    
+                $.post("/app/data/friends", newFriend, function(data) {
+                    console.log("Friend Added", newFriend);
+                    console.log("Checking compatibility...");
+                    console.log("data: ", data);
+                    $("#match-name").text("Your best match is " + data.name);
+                    $("#match-img").attr("src", data.photo);
+
+                    $("#results-modal").modal("toggle");
+                });
+            } else {
+                alert("Please fill out all fields before submitting!")
+            }
+            
+        });
+    </script>
 </body>
 </html>
